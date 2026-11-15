@@ -1,0 +1,13 @@
+#general
+.env
+.env.*
+!.env.example
+.DS_Store
+secrets/
+
+#backend
+.venv/
+__pycache__/
+*.pyc
+
+#frontend
