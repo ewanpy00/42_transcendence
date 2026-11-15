@@ -11,3 +11,15 @@ __pycache__/
 *.pyc
 
 #frontend
+# additions
+*.pem
+*.key
+.pytest_cache/
+.ruff_cache/
+node_modules/
+dist/
+backend/uploads/*
+!backend/uploads/.gitkeep
+backups/
+.idea/
+.vscode/
