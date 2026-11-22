@@ -1,0 +1,47 @@
+
+.ui-toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px 16px;
+  border: 1px solid;
+  border-radius: 8px;
+  max-width: 400px;
+
+  font-size: 14px;
+}
+
+
+.ui-toast--success {
+  background-color: var(--ui-success-bg);
+  border-color: var(--ui-success-border);
+  color: var(--ui-success-text);
+}
+
+.ui-toast--error {
+  background-color: var(--ui-error-bg);
+  border-color: var(--ui-error-border);
+  color: var(--ui-error-text);
+}
+
+.ui-toast--info {
+  background-color: var(--ui-info-bg);
+  border-color: var(--ui-info-border);
+  color: var(--ui-info-text);
+}
+
+
+.ui-toast button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ui-toast button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
