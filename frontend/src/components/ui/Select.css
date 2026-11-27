@@ -1,0 +1,32 @@
+
+.ui-select-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ui-select-field label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ui-select-field select {
+  padding: 12px;
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-md);
+  font-size: 16px;
+  background-color: white;
+  color: #111827;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ui-select-field select:focus-visible {
+  outline: 2px solid var(--ui-color-primary);
+  outline-offset: 2px;
+}
+
+.ui-select-field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

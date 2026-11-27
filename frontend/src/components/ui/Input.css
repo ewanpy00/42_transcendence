@@ -1,0 +1,28 @@
+
+.ui-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ui-input-field label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ui-input-field input {
+  padding: 12px;
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-md);
+  font-size: 16px;
+}
+
+.ui-input-field input:focus-visible {
+  outline: 2px solid var(--ui-color-primary);
+  outline-offset: 2px;
+}
+
+.ui-input-field input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
