@@ -10,8 +10,11 @@ class Settings(BaseSettings):
     debug: bool = False
 
     secret_key: str = ""
+    jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 15
     refresh_token_expire_days: int = 7
+
+    redis_url: str = "redis://localhost:6379/0"
 
     frontend_url: str = "https://localhost"
     cors_origins: list[str] = []
