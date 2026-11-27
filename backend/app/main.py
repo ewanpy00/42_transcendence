@@ -1,6 +1,7 @@
 import logging
 
 from fastapi import FastAPI, Request
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -9,6 +10,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from app.api.v1 import api_router
 from app.api.v1.health import router as health_router
 from app.core.config import get_settings
+from app.ws.endpoint import router as ws_router
 
 logger = logging.getLogger("app")
 settings = get_settings()
@@ -31,21 +33,21 @@ app.add_middleware(
 )
 
 
-def _error(status: int, code: str, message: str, details=None) -> JSONResponse:
+def _error(status: int, code: str, message: str, details=None, headers=None) -> JSONResponse:
     body = {"error": {"code": code, "message": message}}
     if details is not None:
         body["error"]["details"] = details
-    return JSONResponse(status_code=status, content=body)
+    return JSONResponse(status_code=status, content=body, headers=headers)
 
 
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(_: Request, exc: StarletteHTTPException):
-    return _error(exc.status_code, "http_error", str(exc.detail))
+    return _error(exc.status_code, "http_error", str(exc.detail), headers=exc.headers)
 
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(_: Request, exc: RequestValidationError):
-    return _error(422, "validation_error", "Invalid request", exc.errors())
+    return _error(422, "validation_error", "Invalid request", jsonable_encoder(exc.errors()))
 
 
 @app.exception_handler(Exception)
@@ -57,3 +59,4 @@ async def unhandled_exception_handler(_: Request, exc: Exception):
 # /health for container/nginx probes, /api/v1/health for API clients.
 app.include_router(health_router)
 app.include_router(api_router)
+app.include_router(ws_router)
