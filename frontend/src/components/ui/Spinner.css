@@ -1,0 +1,27 @@
+
+.ui-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-spinner-circle {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--ui-color-secondary);
+  border-top-color: var(--ui-color-primary);
+  border-radius: 50%;
+  animation: ui-spin 0.8s linear infinite;
+}
+
+@keyframes ui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-spinner-circle {
+    animation: none;
+  }
+}

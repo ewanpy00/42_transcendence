@@ -1,0 +1,15 @@
+
+/* Shared navigation */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Main page content */
+
+main {
+  padding: 24px;
+}
