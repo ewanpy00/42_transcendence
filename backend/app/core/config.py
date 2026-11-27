@@ -16,6 +16,11 @@ class Settings(BaseSettings):
 
     redis_url: str = "redis://localhost:6379/0"
 
+    # WebSocket: see docs/WS_PROTOCOL.md
+    ws_auth_timeout_seconds: float = 5
+    ws_heartbeat_interval_seconds: float = 25
+    ws_heartbeat_timeout_seconds: float = 60
+
     frontend_url: str = "https://localhost"
     cors_origins: list[str] = []
 
