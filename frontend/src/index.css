@@ -1,0 +1,19 @@
+
+:root {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+}
