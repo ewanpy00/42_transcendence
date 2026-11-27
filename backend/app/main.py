@@ -10,6 +10,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from app.api.v1 import api_router
 from app.api.v1.health import router as health_router
 from app.core.config import get_settings
+from app.ws.endpoint import router as ws_router
 
 logger = logging.getLogger("app")
 settings = get_settings()
@@ -58,3 +59,4 @@ async def unhandled_exception_handler(_: Request, exc: Exception):
 # /health for container/nginx probes, /api/v1/health for API clients.
 app.include_router(health_router)
 app.include_router(api_router)
+app.include_router(ws_router)
