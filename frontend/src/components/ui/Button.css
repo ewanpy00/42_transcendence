@@ -1,0 +1,38 @@
+
+.ui-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ui-button--primary {
+  background-color: var(--ui-color-primary, #4F46E5);
+  color: white;
+}
+
+.ui-button--secondary {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+
+.ui-button--danger {
+  background-color: #DC2626;
+  color: white;
+}
+
+.ui-button:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.ui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-button:focus-visible {
+  outline: 3px solid #818CF8;
+  outline-offset: 2px;
+}
