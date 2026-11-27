@@ -5,3 +5,6 @@ httpx==0.28.1
 pytest==8.3.4
 PyJWT==2.15.1
 pwdlib[argon2]==0.4.2
+email-validator==2.4.0
+redis==8.2.0
+fakeredis==2.41.0
