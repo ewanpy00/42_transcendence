@@ -1,25 +1,24 @@
-#general
+# General
 .env
 .env.*
 !.env.example
 .DS_Store
 secrets/
-
-#backend
-.venv/
-__pycache__/
-*.pyc
-
-#frontend
-# additions
 *.pem
 *.key
-.pytest_cache/
-.ruff_cache/
-node_modules/
-dist/
-backend/uploads/*
-!backend/uploads/.gitkeep
 backups/
 .idea/
 .vscode/
+
+# Backend
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Frontend
+node_modules/
+dist/
